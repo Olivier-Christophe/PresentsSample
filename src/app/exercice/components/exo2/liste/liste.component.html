@@ -1,0 +1,10 @@
+<div style="border: groove blue 2px;" >
+
+    <ul>
+        <li *ngFor="let disk of liste; let i = index">
+           {{disk}} <button (click)="remove(i)"> Supprimer</button> 
+
+        </li>
+    </ul>
+
+</div>

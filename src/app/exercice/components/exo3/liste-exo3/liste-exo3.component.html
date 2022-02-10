@@ -1,0 +1,16 @@
+<div style="border: darkblue 2px dotted;">
+<ul>
+<li *ngFor="let disque of ListeMusic;let i =index">
+
+    {{disque.qty}}  -  {{disque.auteur}}
+    <button (click)="addQty(i)"> + </button>
+    <button (click)="remQty(i)"> - </button>
+    <button (click)="supprimer(i)"> Del </button>
+
+</li>
+
+
+</ul>
+
+
+</div>

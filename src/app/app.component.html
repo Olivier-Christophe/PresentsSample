@@ -1,0 +1,31 @@
+<nb-layout>
+
+  <nb-layout-header fixed>
+  <!-- Insert header here -->
+  </nb-layout-header>
+
+  <nb-layout-column>
+    <header>
+    <h4>Sample</h4>
+    
+    
+    <button (click)="login()">login</button>
+    <button (click)="logout()">logout</button>
+    
+    
+    </header>
+    <div class="nav">
+        <app-nav></app-nav>
+    </div>
+    <div class="content">
+    <router-outlet> </router-outlet>
+    </div>
+    
+     
+  </nb-layout-column>
+
+  <nb-layout-footer fixed>
+  <!-- Insert footer here --><p>&copy; Oli </p>
+  </nb-layout-footer>
+
+</nb-layout>

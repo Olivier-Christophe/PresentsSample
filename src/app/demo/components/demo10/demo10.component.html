@@ -1,0 +1,36 @@
+<h3>Formulaires</h3>
+<form [formGroup]="myFormGroup" (ngSubmit)="onSubmit()">
+    <p>Nom:<input type="texte" formControlName="nom"></p>
+    <p *ngIf="myFormGroup.controls['nom'].invalid">
+        {{myFormGroup.controls['nom'].errors? myFormGroup.controls['nom'].errors['min3']:''}} </p>
+    <p>Titre: <input type="texte" formControlName="titre"></p>
+    <p *ngIf="myFormGroup.controls['titre'].invalid">
+        {{myFormGroup.controls['titre'].errors? myFormGroup.controls['titre'].errors['minValide']:''}} </p>
+    <p>Email : <input type="email" formControlName="email"></p>
+    <p *ngIf="myFormGroup.controls['email'].value && myFormGroup.controls['email'].invalid">Entrez un mail correct </p>
+    <textarea name="textarea"
+   rows="5" cols="30"
+   minlength="10" maxlength="200" placeholder="description">
+</textarea>
+<p></p>
+    
+
+    <button type="button" (click)="addcontrolToArray()">Add samples</button>
+    <div *ngIf="getFileArray().controls !=null " formArrayName="files">
+        <div *ngFor="let c of getFileArray().controls;let i =index">
+          <p>  Fichiers  {{i+1}} : <input type='text' [formControlName]="i"placeholder="File path">
+              
+        </p>
+      
+        </div>
+    </div>
+
+    <button type="submit" [disabled]="!myFormGroup.valid">Upload Samples</button>
+    
+
+
+
+</form>
+
+
+ 

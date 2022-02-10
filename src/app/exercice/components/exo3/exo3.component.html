@@ -1,0 +1,15 @@
+<h3>Shopping Disques (Services)</h3>
+Music <input type="text" [(ngModel)]="music">
+<button (click)="ajout()">Ajouter</button>
+
+<app-liste-exo3
+[ListeMusic]="shoppingListe"
+(ajouQty)="addQty($event)"
+(retirerQty)="remQty($event)" 
+>
+</app-liste-exo3>
+
+
+
+
+  

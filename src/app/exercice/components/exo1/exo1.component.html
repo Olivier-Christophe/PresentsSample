@@ -1,0 +1,10 @@
+<h3>chrono</h3>
+<p>temps écoulé : {{temps | totime}}</p>
+
+<p>
+<button (click)="start()" [ngClass]="{'inactif': timer}"[disabled]="timer" >Start</button>
+<button (click)="pause()" [ngClass]="{'inactif': !timer}"[disabled]="!timer">pause</button>
+<button (click)="reset()" [ngClass]="{'inactif': !temps}"[disabled]="!temps">Reset</button>
+
+
+</p> 

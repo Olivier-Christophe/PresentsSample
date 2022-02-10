@@ -1,0 +1,11 @@
+<h3>Demo Resolver</h3>
+
+<p *ngFor="let chanteurs of listeChanteur; let i=index"> *ngFor="let v of nbvues"
+  <a [routerLink]="['../resolu/'+i]">{{chanteurs}}  </a> 
+  <a [routerLink]="['../resolu/'+i]">{{nbvues}} </a>
+  
+  
+  <button (click)="redirect(i)">Click Here</button>
+
+
+</p>

@@ -1,0 +1,40 @@
+<h3>Menu</h3>
+<h4>Bonjour {{userName}}</h4>
+<!-- <ul>
+    <li><a routerLink="home">Home</a></li>
+    <li><a routerLink="about">About</a></li>
+    <li><a routerLink="demo">Demos</a>
+        <ul>
+            <li><a routerLink="demo/demo1">Démo1 - Property Bindings</a></li>
+            <li><a routerLink="demo/demo2">Démo2 -Event Bindings</a></li>
+            <li><a routerLink="demo/demo3">Démo3 -Pipes</a></li>
+            <li><a routerLink="demo/demo4">Démo4 -Directives</a></li>
+            <li><a routerLink="demo/demo5">Démo5 -Structurales Directives</a></li>
+        </ul>
+    </li>
+    <li><a routerLink="exercice">Exercices</a>
+        <ul>
+            <li><a routerLink="exercice/exo1">Exo1 - Chrono</a></li>
+        </ul>
+    </li>
+</ul>  -->
+<nav>
+    <ul>
+        <li *ngFor="let lien of listelien; let i=index">
+            <a (click)="toggleVisible(i)" [routerLink]="lien.url" [ngClass]="{'parent': lien.children}">
+                {{lien.title}}
+
+
+            </a>
+            <ul *ngIf="lien.children && lien.isChildrenVisible">
+                <li *ngFor="let sublien of lien.children">
+                    <a [routerLink]="sublien.url">{{sublien.title}}
+
+                    </a>
+                </li>
+
+            </ul>
+
+        </li>
+    </ul>
+</nav>

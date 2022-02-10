@@ -1,0 +1,16 @@
+<h3>Liste de Music</h3>
+
+<input type="text" [(ngModel)]="disque">
+<button (click)="ajouter()">Ajouter</button>
+<hr />
+
+<app-liste [liste]="listeDisques" (deleteDisk)="retirer($event)">
+</app-liste>
+
+
+
+
+
+
+        
+
